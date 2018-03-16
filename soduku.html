@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soduku</title>
+<link rel="shortcut icon" href="tic.jpeg"/>
+<link rel="stylesheet" type="text/css" href="mycss.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="javascript.js">
+		
+</script>
+</head>
+
+<body>
+
+<center>
+
+	<table id="tble">
+		<tr>
+		<td><input type="text" id="i1" name="text"  maxlength="1" size="1" class="odd"></td>
+		<td ><input type="text" id="i2" name="text" maxlength="1" size="1" class="odd"></td>
+		<td id="i3" class="odd">2</td>	
+		<td id="i4">9</td>	
+		<td id="i5">8</td>	
+		<td><input type="text" name="text" id="i6"></td>	
+		<td id="i7" class="odd">5</td>	
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i8"></td>	
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i9"></td>	
+		</tr>	
+
+		<tr>
+		<td id="i11" class="odd">4</td>
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i12"></td>
+		<td><input type="text" name="text" maxlength="1" size="1"  id="i13" class="odd"></td>	
+		<td><input type="text" name="text" id="i14"></td>	
+		<td id="i15">7</td>	
+		<td><input type="text" name="text" id="i16"></td>	
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i17"></td>	
+		<td id="i18" class="odd">1</td>	
+		<td id="i19" class="odd">3</td>	
+		</tr>	
+
+		<tr>
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i21"></td>
+		<td id="i22" class="odd">3</td>
+		<td id="i23" class="odd">9</td>	
+		<td id="i24">6</td>	
+		<td><input type="text" name="text" id="i25"></td>	
+		<td id="i26">4</td>	
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i27"></td>	
+		<td id="i28" class="odd">7</td>	
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i29"></td>	
+		</tr>	
+<tr>
+		<td id="i31">2</td>
+		<td><input type="text" name="text" id="i32"></td>
+		<td><input type="text" name="text" id="i33"></td>	
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i34"></td>	
+		<td id="i35" class="odd" class="odd">5</td>	
+		<td id="i36" class="odd">6</td>	
+		<td id="i37">4</td>	
+		<td><input type="text" name="text" id="i38"></td>	
+		<td><input type="text" name="text" id="i39"></td>	
+		</tr>	
+<tr>
+		<td id="i41">8</td>
+		<td id="i42">4</td>
+		<td><input type="text" name="text" id="i43"></td>	
+		<td id="i44" class="odd">3</td>	
+		<td ><input type="text" name="text" maxlength="1"  id="i45" size="1" class="odd"></td>	
+		<td ><input type="text" name="text" maxlength="1" id="i46" size="1" class="odd"></td>	
+		<td id="i47">2</td>	
+		<td><input type="text" name="text" id="i48"></td>	
+		<td id="i49">1</td>	
+		</tr>	
+<tr>
+		<td id="i51">9</td>
+		<td><input type="text" name="text" id="i52"></td>
+		<td id="i53">7</td>	
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i54"></td>	
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i55"></td>	
+		<td id="i56" class="odd">1</td>	
+		<td><input type="text" name="text" id="i57"></td>	
+		<td id="i58">8</td>	
+		<td id="i59">6</td>	
+		</tr>	
+<tr>
+		<td id="i61" class="odd">6</td>
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i62"></td>
+		<td><input type="text" name="text" maxlength="1" size="1" class="odd" id="i63"></td>	
+		<td id="i64">7</td>	
+		<td><input type="text" name="text" id="i65"></td>	
+		<td id="i66">5</td>	
+		<td id="i67" class="odd">1</td>	
+		<td id="i68" class="odd">3</td>	
+		<td><input type="text" name="text" maxlength="1" size="1"  id="i69" class="odd"></td>	
+		</tr>	
+<tr>
+		<td><input type="text" name="text" maxlength="1" size="1"  id="i71" class="odd"></td>
+		<td id="i72" class="odd" class="odd" class="odd">9</td>
+		<td id="i73" class="odd" class="odd">1</td>	
+		<td id="i74">4</td>	
+		<td ><input type="text" name="text" id="i75"></td>	
+		<td><input type="text" name="text" id="i76"></td>	
+		<td><input type="text" name="text" maxlength="1" id="i77" size="1" class="odd"></td>	
+		<td><input type="text" name="text" maxlength="1" id="i78" size="1" class="odd"></td>	
+		<td id="i79" class="odd">5</td>	
+		</tr>	
+<tr>
+		<td><input type="text" name="text" maxlength="1" size="1"  id="i81" class="odd"></td>
+		<td id="i82" class="odd">2</td>
+		<td><input type="text" name="text" maxlength="1" id="i83" size="1" class="odd"></td>	
+		<td><input type="text" name="text"  id="i84"></td>	
+		<td id="i85">3</td>	
+		<td><input type="text" name="text" id="i86"></td>	
+		<td id="i87" class="odd">6</td>	
+		<td><input type="text" name="text" maxlength="1"  id="i88" size="1" class="odd"></td>	
+		<td id="i89" class="odd">8</td>	
+		</tr>	
+
+	</table><br>
+</center>	
+
+</body>
+</html>
