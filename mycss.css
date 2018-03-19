@@ -21,14 +21,17 @@ input[type="text"]{
 	color: rgb(77, 77, 255);
 	font-weight: bold;
 	padding-left: 15px;
+	background-color: rgb(193, 240, 193);
 	font-size: 30px;
 }
-.odd{	
-	background-color: rgb(153, 204, 0);
+input[type="text"]:hover{
+background-color: rgb(102, 41, 0);
+border-radius: 10px;
 
 }
-input[type="text"]:hover{
-background-color: rgb(208, 225, 225);
+input[type="text"]:focus{
+background-color: rgb(255, 173, 51);
+border-radius: 10px;
 }
 td:nth-child(3n){
 	border-right:  solid rgb(51, 13, 0) 5px;
