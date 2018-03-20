@@ -1,13 +1,13 @@
-	var Arr=[0,0,2,9,8,0,5,0,0,
-			 4,0,0,0,7,0,0,1,3,
-			 0,3,9,6,0,4,0,7,0,
-			 2,0,0,0,5,6,4,0,0,
-			 8,4,0,3,0,0,2,0,1,
-			 9,0,7,0,0,1,0,8,6,
-			 6,0,0,7,0,5,1,3,0,
-			 0,9,1,4,0,0,0,0,5,
-			 0,2,0,0,3,0,6,0,8	
-			 ];
+  	var Arr=[0,0,2,9,8,0,5,0,0,
+  			 4,0,0,0,7,0,0,1,3,
+  			 0,3,9,6,0,4,0,7,0,
+  			 2,0,0,0,5,6,4,0,0,
+  			 8,4,0,3,0,0,2,0,1,
+  			 9,0,7,0,0,1,0,8,6,
+  			 6,0,0,7,0,5,1,3,0,
+  			 0,9,1,4,0,0,0,0,5,
+  			 0,2,0,0,3,0,6,0,8	
+  			 ];
     var Arr2=[0,0,0,2,6,0,7,0,1,
               6,8,0,0,7,0,0,9,0,
               1,9,0,0,0,4,5,0,0,
@@ -52,7 +52,7 @@ $(document).ready(function(){
 
 Load();
 
-$("input").keyup(function(){
+$("input").keyup(function(){                          //for illegal input
         if($(this).val()==0)
         $(this).val(''); 
         if($(this).val()>='A'&&$(this).val()<='Z')
@@ -61,6 +61,31 @@ $("input").keyup(function(){
         $(this).val(''); 
            
 });
+
+$("#submit").click(function(){      //Submit Button
+var strid,sum=0,flag=1,K=0;
+    for (var i = 0; i < 9; i++) {
+        sum=0;
+        for (var j = 0; j < 9; j++) {
+           strid="#i"+K;K++;
+          sum=sum+Number($(strid).val());
+
+        }
+
+        if(sum!=45)
+          flag=0;
+    } 
+    if(flag==1)
+      alert("You Win!!!!");
+    else
+      alert("You Lose!!!!");
+
+});
+$("#restart").click(function(){               //for reset
+
+location.reload();
+});
+                                              //for input
     $("#i0").keyup(function(){
         i1(0,9,this,0,0);
         block_check(0,9,this,0,0);
@@ -215,7 +240,7 @@ $("input").keyup(function(){
         block_check(27,36,this,31,30);
     });          
     $("#i32").keyup(function(){
-        i1(27,36,this,31,3);
+        i1(27,36,this,32,3);
         block_check(27,36,this,32,30);
     });
     $("#i33").keyup(function(){
@@ -227,8 +252,8 @@ $("input").keyup(function(){
         block_check(27,36,this,34,33);
     });
     $("#i35").keyup(function(){
-        i1(27,36,this,34,6);
-        block_check(27,36,this,34,33);
+        i1(27,36,this,35,6);
+        block_check(27,36,this,35,33);
     });
                                         //36 to 44
 
@@ -404,6 +429,10 @@ $("input").keyup(function(){
     	i1(72,81,this,77,3);
     	block_check(72,81,this,77,57);
     });	
+    $("#i78").keyup(function(){
+        i1(72,81,this,78,6);
+        block_check(72,81,this,78,60);
+    }); 
     $("#i79").keyup(function(){
         i1(72,81,this,79,6);
         block_check(72,81,this,79,60);
@@ -448,7 +477,7 @@ for (var i = 0; i<81; i++) {
 
 }
 
-
+var rowErr=0,colErr=0,blockErr=0;
 function i1(first,last,z,index,block){
 var num=$(z).val();
 c=0;
@@ -487,7 +516,8 @@ if(index>=81&&index<=89)
 			else{			
 				if(num==copyArr[sum]){//for column checking
 					c=1;	
-					
+					colErr=1;
+
 				}sum=sum+9;
 		}}
 
@@ -498,35 +528,15 @@ for(i=first;i<last;i++){
 			else{
 					if(num==copyArr[i]){// for row checking
 						c=1;
+            rowErr=1;
 								}
 				  }
 		}
     
-/*
-var s=block;
-		for (var h = first; h < last; h++) { //for block
-				
-				if((h%3==0)&&(h>first))
-					s=s+6;
-
-				if(s==index){
-					s++;
-					continue;
-				}
-				else{
-					if(num==Arr[s++])
-						c=1;
-				}
-				
-		}*/
-
- 
-		
-
 }
 	
 
-function block_check(first,last,z,index,block){
+function block_check(first,last,z,index,block){         //block check
 var num=$(z).val();
 var s=block;
 
@@ -543,6 +553,8 @@ var s=block;
 					if(num==copyArr[s++]){
 						
 						c=1;
+            blockErr=1;
+
 					}
 				}
 						
@@ -554,5 +566,30 @@ var s=block;
 				else
 					$(z).css({ 'color': 'green'});
 	
+if((rowErr==0)&&(colErr==0)&&(blockErr==0))     //Error Message
+{
+  $("p").css({ 'color': 'green'});
+  $("p").text ("No Error");
 
+}
+if(colErr==1)
+{
+  $("p").css({ 'color': 'red'});
+  $("p").text("coloumn Error");
+colErr=0;
+}
+
+if(rowErr==1)
+{
+  $("p").css({ 'color': 'red'});
+  $("p").text("rowError");
+  rowErr=0;
+}
+
+if(blockErr==1)
+{
+  $("p").css({ 'color': 'red'});
+  $("p").text ("block Error");
+  blockErr=0;
+}
 }
